@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여행 사이트</title>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3d5154c556d67df4fd5b95746a4f4b25"></script>
+    <link rel="stylesheet" href="jeolla_1.css">
+</head>
+<body>
+    <header>
+        <div class="logo">ᗪᔕᑌ.丅ᖇIᑭ</div>
+        <nav>
+            <ul>
+                <li><a href="test_1.html">홈</a></li>
+                <li><a href="intro.html">소개</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div>
+        <img src="img\선유도.jpg" alt="선유도" id="picture">
+        <div class="text_over">
+            <div class="rest">
+                <a href="https://map.naver.com/p/search/%EC%84%9C%ED%95%B4%ED%9A%8C%EC%8B%9D%EB%8B%B9/place/1938145297?c=15.00,0,0,0,dh&placePath=%3Fentry%253Dbmp">
+                    <img src="img\서해회식당.jpg" alt="회식당"></a>
+                <ul><li>서해회식당</li>
+                <li>서해회식당은 신선한 해산물과 다양한 해산물 요리를 제공합니다. 특히 우럭탕과 물회가 인기가 많으며, 친절한 서비스로도 유명합니다. 회정식, 전복죽, 멍게 등 다양한 메뉴가 있습니다.</li></ul>
+                <div id="map_1" style="width: 500px;height: 320px;border: 1px,solid, black"></div>
+            </div>
+            <div class="rest">
+                <a href="https://map.naver.com/p/search/%EC%9C%A0%EC%84%B1%EA%BD%83%EA%B2%8C%EC%9E%A5/place/17165975?c=15.00,0,0,0,dh&placePath=%3Fentry%253Dbmp">
+                    <img src="img\유성꽃게장.jpg" alt="꽃게장"></a>
+                <ul><li>유성꽃게장</li>
+                <li>유성꽃게장에서는 신선하고 맛있는 꽃게장을 즐길 수 있으며, 반찬도 다양하게 나와 많은 손님들이 만족하고 있습니다. 주차장도 구비되어 있어 편리하게 방문할 수 있습니다.</li></ul>
+                <div id="map_2" style="width: 500px;height: 320px;border: 1px,solid, black"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <p>&copy; 2024 MyTravel. 모든 권리 보유.</p>
+    </footer>
+
+    <script>
+        function initMap(containerId, lat, lng) {
+            let container = document.getElementById(containerId);
+            let options = {
+                center: new kakao.maps.LatLng(lat, lng),
+                level: 3
+            };
+
+            let map = new kakao.maps.Map(container, options);
+
+            let markerPosition = new kakao.maps.LatLng(lat, lng);
+            let marker = new kakao.maps.Marker({
+                position: markerPosition
+            });
+
+            marker.setMap(map);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initMap('map_1', 35.8126659654398, 126.412497332653);
+            initMap('map_2', 35.9659681899967, 126.719118057867);
+        });
+    </script>
+</body>
+</html>

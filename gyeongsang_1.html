@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여행 사이트</title>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3d5154c556d67df4fd5b95746a4f4b25"></script>
+    <link rel="stylesheet" href="gyeongsang_1.css">
+</head>
+<body>
+    <header>
+        <div class="logo">ᗪᔕᑌ.丅ᖇIᑭ</div>
+        <nav>
+            <ul>
+                <li><a href="test_1.html">홈</a></li>
+                <li><a href="intro.html">소개</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div>
+        <img src="img\동궁과 월지.jpg" alt="동궁과 월지" id="picture">
+        <div class="text_over">
+            <div class="rest">
+                <a href="https://map.naver.com/p/search/%ED%99%A9%EB%82%A8%EB%B9%B5/place/11717172?c=15.00,0,0,0,dh&placePath=%3Fentry%253Dbmp">
+                    <img src="img\황남빵.jpg" alt="황남빵"></a>
+                <ul><li>황남빵 본점</li>
+                <li>경주의 명물인 황남빵은 달콤한 팥소와 부드러운 빵이 조화를 이루는 전통 빵입니다. 1939년부터 시작된 이곳은 경주를 대표하는 먹거리로 많은 관광객들이 찾는 곳입니다.</li></ul>
+                <div id="map_1" style="width: 500px;height: 320px;border: 1px,solid, black"></div>
+            </div>
+            <div class="rest">
+                <a href="https://map.naver.com/p/search/%EC%9A%94%EC%84%9D%EA%B6%81/place/1505892139?c=15.00,0,0,0,dh&placePath=%3Fentry%253Dbmp">
+                    <img src="img\요석궁.jpeg" alt="요석궁"></a>
+                <ul><li>요석궁</li>
+                <li>전통 한정식을 맛볼 수 있는 곳으로, 고즈넉한 한옥 분위기에서 다양한 한식 요리를 즐길 수 있습니다. 경주에서 오래된 맛집으로 유명합니다.</li></ul>
+                <div id="map_2" style="width: 500px;height: 320px;border: 1px,solid, black"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <p>&copy; 2024 MyTravel. 모든 권리 보유.</p>
+    </footer>
+
+    <script>
+        function initMap(containerId, lat, lng) {
+            let container = document.getElementById(containerId);
+            let options = {
+                center: new kakao.maps.LatLng(lat, lng),
+                level: 3
+            };
+
+            let map = new kakao.maps.Map(container, options);
+
+            let markerPosition = new kakao.maps.LatLng(lat, lng);
+            let marker = new kakao.maps.Marker({
+                position: markerPosition
+            });
+
+            marker.setMap(map);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initMap('map_1', 35.8408710452003, 129.213690441388);
+            initMap('map_2', 35.8305534491356, 129.217003047852);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여행 사이트</title>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3d5154c556d67df4fd5b95746a4f4b25"></script>
+    <link rel="stylesheet" href="gyeongsang_2.css">
+</head>
+<body>
+    <header>
+        <div class="logo">ᗪᔕᑌ.丅ᖇIᑭ</div>
+        <nav>
+            <ul>
+                <li><a href="test_1.html">홈</a></li>
+                <li><a href="intro.html">소개</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div>
+        <img src="img\간절곶.jpeg" alt="간절곶" id="picture">
+        <div class="text_over">
+            <div class="rest">
+                <a href="https://map.naver.com/p/search/%EB%82%98%EC%82%AC%EB%A6%AC%EC%8B%9D%EB%8B%B9/place/1510318845?c=15.00,0,0,0,dh&placePath=%3Fentry%253Dbmp">
+                    <img src="img\나사리식당.jpeg" alt="나사리"></a>
+                <ul><li>나사리식당</li>
+                <li>해물 왕칼국수, 해물 부추전, 꼬막 충무김밥이 인기 메뉴입니다. 신선한 해산물과 다양한 해산물 요리를 즐길 수 있으며, 창가석에서 바다 전망을 감상하며 식사를 할 수 있습니다. 많은 손님들이 찾는 인기 맛집으로, 특히 해물 칼국수가 맛있다는 평이 많습니다.</li></ul>
+                <div id="map_1" style="width: 500px;height: 320px;border: 1px,solid, black"></div>
+            </div>
+            <div class="rest">
+                <a href="https://map.naver.com/p/search/%EB%B1%83%EA%B3%A0%EB%8F%99%ED%9A%9F%EC%A7%91/place/16522705?c=15.00,0,0,0,dh&placePath=%3Fentry%253Dbmp">
+                    <img src="img\뱃고동.jpeg" alt="뱃고동"></a>
+                <ul><li>뱃고동 횟집</li>
+                <li>이곳은 신선한 횟감과 함께 먹는 회비빔밥이 유명합니다. 바다를 바라보며 식사를 할 수 있는 창가 자리가 인기이며, 풍성한 미역국과 다양한 밑반찬이 제공됩니다​.</li></ul>
+                <div id="map_2" style="width: 500px;height: 320px;border: 1px,solid, black"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <p>&copy; 2024 MyTravel. 모든 권리 보유.</p>
+    </footer>
+
+    <script>
+        function initMap(containerId, lat, lng) {
+            let container = document.getElementById(containerId);
+            let options = {
+                center: new kakao.maps.LatLng(lat, lng),
+                level: 3
+            };
+
+            let map = new kakao.maps.Map(container, options);
+
+            let markerPosition = new kakao.maps.LatLng(lat, lng);
+            let marker = new kakao.maps.Marker({
+                position: markerPosition
+            });
+
+            marker.setMap(map);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initMap('map_1', 35.356413520784, 129.335645021714);
+            initMap('map_2', 35.3549849832126, 129.355084267394);
+        });
+    </script>
+</body>
+</html>
