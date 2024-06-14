@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여행 사이트</title>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3d5154c556d67df4fd5b95746a4f4b25"></script>
+    <link rel="stylesheet" href="jeolla_2.css">
+</head>
+<body>
+    <header>
+        <div class="logo">ᗪᔕᑌ.丅ᖇIᑭ</div>
+        <nav>
+            <ul>
+                <li><a href="test_1.html">홈</a></li>
+                <li><a href="intro.html">소개</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div>
+        <img src="img\아쿠아플라넷.jpg" alt="아쿠아플라넷" id="picture">
+        <div class="text_over">
+            <div class="rest">
+                <a href="https://map.naver.com/p/search/%EB%B6%80%EC%9E%90%EC%8B%9D%EB%8B%B9/place/1006564705?c=15.00,0,0,0,dh&placePath=%3Fentry%253Dbmp">
+                    <img src="부자식당.jpg" alt="부자식당"></a>
+                <ul><li>부자식당</li>
+                <li>이곳은 서대회무침으로 유명한 식당입니다. 서대회무침은 새콤달콤한 맛이 일품으로, 갈치조림 등 다른 메뉴도 맛있다고 합니다. 다양한 연예인들이 다녀간 곳으로도 유명하며, 아쿠아플라넷에서 차로 5분 거리에 있어 접근성도 좋습니다.</li></ul>
+                <div id="map_1" style="width: 500px;height: 320px;border: 1px,solid, black"></div>
+            </div>
+            <div class="rest">
+                <a href="https://map.naver.com/p/search/%EB%8F%99%EC%84%9C%EC%8B%9D%EB%8B%B9/place/16931408?c=12.00,0,0,0,dh&placePath=%3Fentry%253Dbmp">
+                    <img src="img\동서식당.webp" alt="동서식당"></a>
+                <ul><li>동서식당</li>
+                <li>이 식당은 서대회무침을 비롯한 다양한 해산물 요리로 유명합니다. 서대회무침은 회덮밥처럼 밥과 김가루, 참기름을 넣어 비벼 먹으면 더욱 맛있습니다. 오동도와 케이블카 등 주요 관광지와도 가까워 여행 중 방문하기 좋은 곳입니다.</li></ul>
+                <div id="map_2" style="width: 500px;height: 320px;border: 1px,solid, black"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <p>&copy; 2024 MyTravel. 모든 권리 보유.</p>
+    </footer>
+
+    <script>
+        function initMap(containerId, lat, lng) {
+            let container = document.getElementById(containerId);
+            let options = {
+                center: new kakao.maps.LatLng(lat, lng),
+                level: 3
+            };
+
+            let map = new kakao.maps.Map(container, options);
+
+            let markerPosition = new kakao.maps.LatLng(lat, lng);
+            let marker = new kakao.maps.Marker({
+                position: markerPosition
+            });
+
+            marker.setMap(map);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initMap('map_1', 34.7390328674594, 127.745784532268);
+            initMap('map_2', 34.7417726572609, 127.751985499358);
+        });
+    </script>
+</body>
+</html>

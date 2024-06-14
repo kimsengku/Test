@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여행 사이트</title>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3d5154c556d67df4fd5b95746a4f4b25"></script>
+    <link rel="stylesheet" href="gyeonggi_1.css">
+</head>
+<body>
+    <header>
+        <div class="logo">ᗪᔕᑌ.丅ᖇIᑭ</div>
+        <nav>
+            <ul>
+                <li><a href="test_1.html">홈</a></li>
+                <li><a href="intro.html">소개</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div>
+        <img src="img/수원 화성.jpg" alt="수원 화성" id="picture">
+        <div class="text_over">
+            <div class="rest">
+                <a href="https://naver.me/xPIpLCyj">
+                    <img src="img/보영만두.jpg" alt="보영만두"></a>
+                <ul><li>보영만두</li>
+                <li>보영만두는 만두 전문점으로 갓 쪄낸 만두를 맛볼 수 있는 만두 전문점입니다. 보영만두만의 레시피로 촉촉한 만두피가 특징이며, 수원 북문본점이 본점으로 가장 전통적인 맛을 자랑합니다.</li></ul>
+                <div id="map_1" style="width: 500px;height: 320px;border: 1px,solid, black"></div>
+            </div>
+            <div class="rest">
+                <a href="https://naver.me/ForHSLYb">
+                    <img src="img/에그궁.jpg" alt="에그궁"></a>
+                <ul><li>에그궁</li>
+                <li>에그궁은 양식 전문점으로, 오믈렛이 가장 맛있는 오믈렛 맛집입니다. 편안한 분위기에서 맛있는 양식을 먹을 수 있는 음식점으로 행궁동에서 유명한 양식당입니다.예약이 가능한 식당으로 편리하게 식사가 가능합니다.</li></ul>
+                <div id="map_2" style="width: 500px;height: 320px;border: 1px,solid, black"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <p>&copy; 2024 MyTravel. 모든 권리 보유.</p>
+    </footer>
+
+    <script>
+        function initMap(containerId, lat, lng) {
+            let container = document.getElementById(containerId);
+            let options = {
+                center: new kakao.maps.LatLng(lat, lng),
+                level: 3
+            };
+
+            let map = new kakao.maps.Map(container, options);
+
+            let markerPosition = new kakao.maps.LatLng(lat, lng);
+            let marker = new kakao.maps.Marker({
+                position: markerPosition
+            });
+
+            marker.setMap(map);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initMap('map_1',37.2895785125174, 127.014397057603);
+            initMap('map_2', 37.2854208297393, 127.01026953078);
+        });
+    </script>
+</body>
+</html>
