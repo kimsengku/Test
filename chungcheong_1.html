@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여행 사이트</title>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3d5154c556d67df4fd5b95746a4f4b25"></script>
+    <link rel="stylesheet" href="chungcheong_1.css">
+</head>
+<body>
+    <header>
+        <div class="logo">ᗪᔕᑌ.丅ᖇIᑭ</div>
+        <nav>
+            <ul>
+                <li><a href="test_1.html">홈</a></li>
+                <li><a href="intro.html">소개</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div>
+        <img src="img/지중해마을.jpg" alt="지중해마을" id="picture">
+        <div class="text_over">
+            <div class="rest">
+                <a href="https://naver.me/xNdmexag">
+                    <img src="img/탕정집.jpg" alt="탕정집"></a>
+                <ul><li>탕정집</li>
+                <li>탕정집은 쭈꾸미 전문점으로, 지중해마을안에 위치해있어 접근성이 좋습니다. 푸짐한 양과 맛있는 쭈꾸미가 대표메뉴입니다.</li></ul>
+                <div id="map_1" style="width: 500px;height: 320px;border: 1px,solid, black"></div>
+            </div>
+            <div class="rest">
+                <a href="https://naver.me/GHEVXL1K">
+                    <img src="img/아리랑 쌈밥.jpg" alt="아리랑 쌈밥"></a>
+                <ul><li>아리랑 쌈밥</li>
+                <li>아리랑 쌈밥은 아리랑식당은 1980년 개업이후 아산4대맛집으로 선정된 식당이며 연중무휴 24시간 운영하는 식당입니다.1인 주문가능한 메뉴들도 다양하게 준비가 되어 있습니다.
+                    </li></ul>
+                <div id="map_2" style="width: 500px;height: 320px;border: 1px,solid, black"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <p>&copy; 2024 MyTravel. 모든 권리 보유.</p>
+    </footer>
+
+    <script>
+        function initMap(containerId, lat, lng) {
+            let container = document.getElementById(containerId);
+            let options = {
+                center: new kakao.maps.LatLng(lat, lng),
+                level: 3
+            };
+
+            let map = new kakao.maps.Map(container, options);
+
+            let markerPosition = new kakao.maps.LatLng(lat, lng);
+            let marker = new kakao.maps.Marker({
+                position: markerPosition
+            });
+
+            marker.setMap(map);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initMap('map_1', 36.79720078507, 127.061385687457);
+            initMap('map_2', 36.7814550338628 ,127.005101507373);
+        });
+    </script>
+</body>
+</html>

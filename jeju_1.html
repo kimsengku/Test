@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여행 사이트</title>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3d5154c556d67df4fd5b95746a4f4b25"></script>
+    <link rel="stylesheet" href="jeju_1.css">
+</head>
+<body>
+    <header>
+        <div class="logo">ᗪᔕᑌ.丅ᖇIᑭ</div>
+        <nav>
+            <ul>
+                <li><a href="test_1.html">홈</a></li>
+                <li><a href="intro.html">소개</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div>
+        <img src="img\새별오름.jpg" alt="새별오름" id="picture">
+        <div class="text_over">
+            <div class="rest">
+                <a href="https://naver.me/F2vY8XvY">
+                    <img src="img\고바진.jpg" alt="고바진"></a>
+                <ul><li>고바진</li>
+                <li>고바진은 흑돼지 전문점으로, 항아리에서 숯불로 구워져 담백한 흑돼지를 즐길 수 있습니다. 흑돼지를 전통 방식으로 구워 제공하여 고기 냄새가 옷에 덜 배고, 아이들과 함께 편안하게 식사하기 좋은 곳입니다. 예약을 하면 더욱 편리하게 이용할 수 있습니다</li></ul>
+                <div id="map_1" style="width: 500px;height: 320px;border: 1px,solid, black"></div>
+            </div>
+            <div class="rest">
+                <a href="https://naver.me/x6PU1S49">
+                    <img src="img\숨비나리.jpg" alt="숨비나리"></a>
+                <ul><li>숨비나리</li>
+                <li>숨비나리는 제주도의 해산물 요리를 즐길 수 있는 맛집으로, 통갈치구이와 고등어 조림이 특히 유명합니다. 신선한 해산물을 풍부하게 사용한 요리들이 많아 제주 특유의 맛을 제대로 느낄 수 있습니다. 가족 모두가 만족할 수 있는 맛과 양을 자랑합니다​</li></ul>
+                <div id="map_2" style="width: 500px;height: 320px;border: 1px,solid, black"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <p>&copy; 2024 MyTravel. 모든 권리 보유.</p>
+    </footer>
+
+    <script>
+        function initMap(containerId, lat, lng) {
+            let container = document.getElementById(containerId);
+            let options = {
+                center: new kakao.maps.LatLng(lat, lng),
+                level: 3
+            };
+
+            let map = new kakao.maps.Map(container, options);
+
+            let markerPosition = new kakao.maps.LatLng(lat, lng);
+            let marker = new kakao.maps.Marker({
+                position: markerPosition
+            });
+
+            marker.setMap(map);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initMap('map_1', 33.309000, 126.349114);
+            initMap('map_2', 33.282232, 126.348551);
+        });
+    </script>
+</body>
+</html>

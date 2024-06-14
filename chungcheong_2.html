@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여행 사이트</title>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3d5154c556d67df4fd5b95746a4f4b25"></script>
+    <link rel="stylesheet" href="chungcheong_2.css">
+</head>
+<body>
+    <header>
+        <div class="logo">ᗪᔕᑌ.丅ᖇIᑭ</div>
+        <nav>
+            <ul>
+                <li><a href="test_1.html">홈</a></li>
+                <li><a href="intro.html">소개</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div>
+        <img src="img/청산수목원.jpg" alt="청산수목원" id="picture">
+        <div class="text_over">
+            <div class="rest">
+                <a href="https://naver.me/xPIpF9wF">
+                    <img src="img/오리생각.jpg" alt="오리생각"></a>
+                <ul><li>오리생각</li> 
+                <li>태안에 위치한 오리생각은 오리 전문점으로 오리 백숙,오리주물럭,녹두죽 등을 판매하는 식당입니다.식당 전용 무료 주차장이있어, 주.정차에 편리합니다.단체이용도 가능합니다.</li></ul>
+                <div id="map_1" style="width: 500px;height: 320px;border: 1px,solid, black"></div>
+            </div>
+            <div class="rest">
+                <a href="https://naver.me/GB5xZu9F">
+                    <img src="img/덕수식당.jpg" alt="돼지집"></a>
+                <ul><li>덕수식당</li>
+                <li>덕수식당은 태안에 위치한 백반집으로 돌게장,갈치찌개,게국지,돌게정식 등 여러 한식을 판매하는 한식집입니다.웨이팅 예약이 가능해 편리한 이용이 가능합니다.
+                </li></ul>
+                <div id="map_2" style="width: 500px;height: 320px;border: 1px,solid, black"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <p>&copy; 2024 MyTravel. 모든 권리 보유.</p>
+    </footer>
+
+    <script>
+        function initMap(containerId, lat, lng) {
+            let container = document.getElementById(containerId);
+            let options = {
+                center: new kakao.maps.LatLng(lat, lng),
+                level: 3
+            };
+
+            let map = new kakao.maps.Map(container, options);
+
+            let markerPosition = new kakao.maps.LatLng(lat, lng);
+            let marker = new kakao.maps.Marker({
+                position: markerPosition
+            });
+
+            marker.setMap(map);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initMap('map_1', 36.6923433033296 ,126.28252291703);
+            initMap('map_2',36.7517624319305,126.303150353864);
+        });
+    </script>
+</body>
+</html>

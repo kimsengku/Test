@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여행 사이트</title>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3d5154c556d67df4fd5b95746a4f4b25"></script>
+    <link rel="stylesheet" href="seoul_1.css">
+</head>
+<body>
+    <header>
+        <div class="logo">ᗪᔕᑌ.丅ᖇIᑭ</div>
+        <nav>
+            <ul>
+                <li><a href="test_1.html">홈</a></li>
+                <li><a href="intro.html">소개</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div>
+        <img src="img\경복궁.jpg" alt="경복궁" id="picture">
+        <div class="text_over">
+            <div class="rest">
+                <a href="https://naver.me/Gw5EaR1A">
+                    <img src="img\삼천동수제비.jpeg" alt="수제비"></a>
+                <ul><li>삼천동 수제비</li>
+                <li>전통적인 수제비와 해물파전으로 유명한 맛집입니다. 쫄깃한 수제비와 풍성한 해물파전은 한국 전통 음식을 맛보고 싶은 분들에게 제격입니다.</li></ul>
+                <div id="map_1" style="width: 500px;height: 320px;border: 1px,solid, black"></div>
+            </div>
+            <div class="rest">
+                <a href="https://naver.me/GdJ1JFni">
+                    <img src="img\서촌계단집.jpeg" alt="계단집"></a>
+                <ul><li>서촌 계단집</li>
+                <li>경복궁 서쪽에 위치한 서촌 지역의 인기 맛집으로, 다양한 한식 메뉴를 제공합니다. 특히 갈비찜과 전복죽이 맛있기로 유명합니다.</li></ul>
+                <div id="map_2" style="width: 500px;height: 320px;border: 1px,solid, black"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <p>&copy; 2024 MyTravel. 모든 권리 보유.</p>
+    </footer>
+
+    <script>
+        function initMap(containerId, lat, lng) {
+            let container = document.getElementById(containerId);
+            let options = {
+                center: new kakao.maps.LatLng(lat, lng),
+                level: 3
+            };
+
+            let map = new kakao.maps.Map(container, options);
+
+            let markerPosition = new kakao.maps.LatLng(lat, lng);
+            let marker = new kakao.maps.Marker({
+                position: markerPosition
+            });
+
+            marker.setMap(map);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initMap('map_1', 37.58460603006, 126.981924600907);
+            initMap('map_2', 37.5764067520043, 126.971474020182);
+        });
+    </script>
+</body>
+</html>

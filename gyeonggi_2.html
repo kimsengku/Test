@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여행 사이트</title>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3d5154c556d67df4fd5b95746a4f4b25"></script>
+    <link rel="stylesheet" href="gyeonggi_2.css">
+</head>
+<body>
+    <header>
+        <div class="logo">ᗪᔕᑌ.丅ᖇIᑭ</div>
+        <nav>
+            <ul>
+                <li><a href="test_1.html">홈</a></li>
+                <li><a href="intro.html">소개</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div>
+        <img src="img/광명동굴.jpg" alt="광명동굴" id="picture">
+        <div class="text_over">
+            <div class="rest">
+                <a href="https://naver.me/5zJoO2hi">ㄴ
+                    <img src="img/또와요짬뽕.jpg" alt="또와요짬뽕"></a>
+                <ul><li>또와요짬뽕</li> 
+                <li>또와요짬뽕은 광명동굴과 가깝게 위치해있어, 가족단위 식사를 하기에 접근성이 편리한 식당입니다. 중식당으로, 여러가지 중식을 먹을 수 있으며 주메뉴는 순두부 짬뽕입니다.</li></ul>
+                <div id="map_1" style="width: 500px;height: 320px;border: 1px,solid, black"></div>
+            </div>
+            <div class="rest">
+                <a href="https://naver.me/xgeWCgdk">
+                    <img src="img/돼지집.jpg" alt="돼지집"></a>
+                <ul><li>돼지집</li>
+                <li>돼지집은 두루치기 전문점으로,광명에서 제일 클래식하고 맛있는 두루지기 맛집입니다. 32년전통으로 변하지 않는 맛을 자랑합니다.</li></ul>
+                <div id="map_2" style="width: 500px;height: 320px;border: 1px,solid, black"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <p>&copy; 2024 MyTravel. 모든 권리 보유.</p>
+    </footer>
+
+    <script>
+        function initMap(containerId, lat, lng) {
+            let container = document.getElementById(containerId);
+            let options = {
+                center: new kakao.maps.LatLng(lat, lng),
+                level: 3
+            };
+
+            let map = new kakao.maps.Map(container, options);
+
+            let markerPosition = new kakao.maps.LatLng(lat, lng);
+            let marker = new kakao.maps.Marker({
+                position: markerPosition
+            });
+
+            marker.setMap(map);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initMap('map_1', 37.4176527473177 ,126.853746986793);
+            initMap('map_2', 37.4359293,126.8858567);
+        });
+    </script>
+</body>
+</html>
