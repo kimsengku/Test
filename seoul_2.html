@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>여행 사이트</title>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3d5154c556d67df4fd5b95746a4f4b25"></script>
     <link rel="stylesheet" href="seoul_2.css">
 </head>
 <body>
@@ -11,17 +12,59 @@
         <div class="logo">ᗪᔕᑌ.丅ᖇIᑭ</div>
         <nav>
             <ul>
-                <li><a href="test_1.html">홈</a></li>
+                <li><a href="index.html">홈</a></li>
                 <li><a href="intro.html">소개</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section class="hero">
-            <h1>남산타워</h1>
-        </section>
-    </main>
+    <div>
+        <img src="img\남산타워.jpeg" alt="남산타워" id="picture">
+        <div class="text_over">
+            <div class="rest">
+                <a href="https://naver.me/Gi9sbjm8">
+                    <img src="img\한쿡.jpg" alt="한쿡"></a>
+                <ul><li>한쿡</li>
+                <li>한쿡은 남산타워 내에 위치한 고급 한식당으로, 탁 트인 서울 전망과 함께 프리미엄 한식을 즐길 수 있는 곳입니다. 이곳은 특히 한우 채끝살, 전복쌈, 다양한 한정식 메뉴 등이 인기입니다. </li></ul>
+                <div id="map_1" style="width: 500px;height: 320px;border: 1px,solid, black"></div>
+            </div>
+            <div class="rest">
+                <a href="https://naver.me/xXrDr3yP">
+                    <img src="img\원조남산왕돈까스.jpg" alt="남산돈까스"></a>
+                <ul><li>원조남산왕돈까스</li>
+                <li>남산타워 근처에서 가장 유명한 돈까스 맛집 중 하나로, 옛날 경양식 스타일의 왕돈까스를 즐길 수 있습니다. 돈까스의 양이 많고 가격도 합리적이어서 많은 사람들에게 인기를 끌고 있습니다.</li></ul>
+                <div id="map_2" style="width: 500px;height: 320px;border: 1px,solid, black"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 MyTravel. 모든 권리 보유.</p>
+    </footer>
+
+    <script>
+        function initMap(containerId, lat, lng) {
+            let container = document.getElementById(containerId);
+            let options = {
+                center: new kakao.maps.LatLng(lat, lng),
+                level: 3
+            };
+
+            let map = new kakao.maps.Map(container, options);
+
+            let markerPosition = new kakao.maps.LatLng(lat, lng);
+            let marker = new kakao.maps.Marker({
+                position: markerPosition
+            });
+
+            marker.setMap(map);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initMap('map_1', 37.5512, 126.9882);
+            initMap('map_2', 37.5574, 126.9861);
+        });
+    </script>
 
     <footer>
         <p>&copy; 2024 MyTravel. 모든 권리 보유.</p>

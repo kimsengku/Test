@@ -37,6 +37,47 @@ header nav ul li a:hover {
     text-decoration: underline;
 }
 
+.featured-destinations {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.featured-destinations h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.destination-grid {
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+}
+
+.destination-card {
+    width: 580px;
+    height: 546px;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.destination-card img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+}
+
+.destination-card h3 {
+    padding: 25px;
+    font-size: 2em;
+    background-color: #007BFF;
+    color: #fff;
+    margin: 0;
+}
+
 footer {
     background-color: #333;
     color: #fff;
@@ -51,7 +92,7 @@ footer p {
 }
 
 .hero {
-    background-image: url('https://source.unsplash.com/1600x900/?travel');
+    background-image: url('/img/Jeju-Island-hotels-things-to-do-in-Jeju-Island-South-Korea.jpg');
     background-size: cover;
     background-position: center;
     color: #fff;

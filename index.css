@@ -37,6 +37,51 @@ header nav ul li a:hover {
     text-decoration: underline;
 }
 
+.hero {
+    background-image: url('/img/6318617a-city-35982-163ff913019.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 150px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search-form input {
+    padding: 10px;
+    font-size: 1.2em;
+    width: 300px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.search-form button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #FF5733;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.search-form button:hover {
+    background-color: #C70039;
+}
+
 .featured-destinations {
     padding: 50px 20px;
     text-align: center;
@@ -52,12 +97,12 @@ header nav ul li a:hover {
 .destination-grid {
     display: flex;
     justify-content: center;
-    gap: 120px;
+    gap: 20px;
 }
 
 .destination-card {
-    width: 580px;
-    height: 546px;
+    width: 300px;
+    height: 266px;
     border: none;
     border-radius: 10px;
     overflow: hidden;
@@ -66,17 +111,18 @@ header nav ul li a:hover {
 
 .destination-card img {
     width: 100%;
-    height: 450px;
+    height: 200px;
     object-fit: cover;
 }
 
 .destination-card h3 {
-    padding: 25px;
-    font-size: 2em;
+    padding: 15px;
+    font-size: 1.5em;
     background-color: #007BFF;
     color: #fff;
     margin: 0;
 }
+
 footer {
     background-color: #333;
     color: #fff;
@@ -90,19 +136,32 @@ footer p {
     font-size: 1em;
 }
 
-.hero {
-    background-image: url('/img/충청도.jpg');
-    background-size: cover;
-    background-position: center;
-    color: #fff;
-    padding: 150px 20px;
-    text-align: center;
+.destination {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 5px;
+    margin-bottom: 10px;
 }
 
-.hero h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+.destination-undercard {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.destination h3 {
+    padding: 15px;
+    font-size: 1.5em;
+    background-color: #007BFF;
+    color: #fff;
+    margin: 0;
+}
+
+.destination img {
+    width: 240px;
+    height: 160px;
 }
 
 a {

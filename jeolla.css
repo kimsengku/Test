@@ -51,7 +51,7 @@ footer p {
 }
 
 .hero {
-    background-image: url('https://source.unsplash.com/1600x900/?travel');
+    background-image: url('/img/전라도.jpeg');
     background-size: cover;
     background-position: center;
     color: #fff;
