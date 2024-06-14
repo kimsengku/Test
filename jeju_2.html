@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여행 사이트</title>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3d5154c556d67df4fd5b95746a4f4b25"></script>
+    <link rel="stylesheet" href="jeju_2.css">
+</head>
+<body>
+    <header>
+        <div class="logo">ᗪᔕᑌ.丅ᖇIᑭ</div>
+        <nav>
+            <ul>
+                <li><a href="test_1.html">홈</a></li>
+                <li><a href="intro.html">소개</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div>
+        <img src="img\우도.jpg" alt="해운대 해수욕장" id="picture">
+        <div class="text_over">
+            <div class="rest">
+                <a href="https://naver.me/5s93n2Si">
+                    <img src="img\하하호호.jpg" alt="밀양돼지국밥"></a>
+                <ul><li>하하호호</li>
+                <li>우도의 땅콩을 활용한 땅콩 흑돼지 버거와 땅콩 아이스크림으로 유명합니다. 수제버거와 디저트를 추천합니다.</li></ul>
+                <div id="map_1" style="width: 500px;height: 320px;border: 1px,solid, black"></div>
+            </div>
+            <div class="rest">
+                <a href="https://naver.me/x35iHOUg">
+                    <img src="img\우도짜장맨.jpg" alt="삼거리식당"></a>
+                <ul><li>우도짜장맨</li>
+                <li>우도에서 채취한 톳을 넣은 짜장면으로 유명한 곳입니다. 짬뽕도 다양한 해산물을 사용해 진한 국물이 일품입니다.</li></ul>
+                <div id="map_2" style="width: 500px;height: 320px;border: 1px,solid, black"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <p>&copy; 2024 MyTravel. 모든 권리 보유.</p>
+    </footer>
+
+    <script>
+        function initMap(containerId, lat, lng) {
+            let container = document.getElementById(containerId);
+            let options = {
+                center: new kakao.maps.LatLng(lat, lng),
+                level: 3
+            };
+
+            let map = new kakao.maps.Map(container, options);
+
+            let markerPosition = new kakao.maps.LatLng(lat, lng);
+            let marker = new kakao.maps.Marker({
+                position: markerPosition
+            });
+
+            marker.setMap(map);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initMap('map_1', 33.520833, 126.948480);
+            initMap('map_2', 33.497675, 126.967700);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여행 사이트</title>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3d5154c556d67df4fd5b95746a4f4b25"></script>
+    <link rel="stylesheet" href="gangwon_2.css">
+</head>
+<body>
+    <header>
+        <div class="logo">ᗪᔕᑌ.丅ᖇIᑭ</div>
+        <nav>
+            <ul>
+                <li><a href="test_1.html">홈</a></li>
+                <li><a href="intro.html">소개</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div>
+        <img src="img\정동진.jpg" alt="정동진 해수욕장" id="picture">
+        <div class="text_over">
+            <div class="rest">
+                <a href="https://naver.me/FQaYxl9X">
+                    <img src="img\정동횟집.jpg" alt="정동횟집"></a>
+                <ul><li>정동횟집</li>
+                <li>정동진 해변 근처에서 신선한 해산물을 맛볼 수 있는 곳입니다. 특히 활어회와 해산물이 신선하며, 회와 함께 나오는 다양한 쌈채소와 막장 소스가 맛의 완성도를 높여줍니다. 전복과 해삼이 신선하고 맛있어 어린이들도 좋아할 만한 곳입니다</li></ul>
+                <div id="map_1" style="width: 500px;height: 320px;border: 1px,solid, black"></div>
+            </div>
+            <div class="rest">
+                <a href="https://naver.me/5WcBOgsn">
+                    <img src="img\고기랑 조개랑.jpg" alt="고기 조개"></a>
+                <ul><li>고기랑 조개랑</li>
+                <li>정동진 해변 근처에서 해물라면과 다양한 조개 요리를 즐길 수 있는 곳입니다. 해물라면에는 전복과 다양한 해산물이 가득 들어있어 해물탕 못지 않은 풍미를 자랑합니다. 정동진에서 해변을 즐기며 간편하게 맛있는 해산물을 즐기기에 좋은 장소입니다</li></ul>
+                <div id="map_2" style="width: 500px;height: 320px;border: 1px,solid, black"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <p>&copy; 2024 MyTravel. 모든 권리 보유.</p>
+    </footer>
+
+    <script>
+        function initMap(containerId, lat, lng) {
+            let container = document.getElementById(containerId);
+            let options = {
+                center: new kakao.maps.LatLng(lat, lng),
+                level: 3
+            };
+
+            let map = new kakao.maps.Map(container, options);
+
+            let markerPosition = new kakao.maps.LatLng(lat, lng);
+            let marker = new kakao.maps.Marker({
+                position: markerPosition
+            });
+
+            marker.setMap(map);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initMap('map_1', 37.686260, 129.039736);
+            initMap('map_2', 37.686496, 129.035345);
+        });
+    </script>
+</body>
+</html>

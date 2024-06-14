@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여행 사이트</title>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3d5154c556d67df4fd5b95746a4f4b25"></script>
+    <link rel="stylesheet" href="busan_2.css">
+</head>
+<body>
+    <header>
+        <div class="logo">ᗪᔕᑌ.丅ᖇIᑭ</div>
+        <nav>
+            <ul>
+                <li><a href="test_1.html">홈</a></li>
+                <li><a href="intro.html">소개</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div>
+        <img src="img\자갈치 시장.jpg" alt="자갈치 시장" id="picture">
+        <div class="text_over">
+            <div class="rest">
+                <a href="https://naver.me/GGhql0P4">
+                    <img src="img\영도 회타운.jpg" alt="영도 회타운"></a>
+                <ul><li>영도 회타운</li>
+                <li>영도 회타운은 자갈치 시장에서 신선한 회를 저렴한 가격에 즐길 수 있는 대표적인 맛집입니다. 다양한 생선회와 해산물 요리를 제공하며, 다양한 메뉴 선택이 가능합니다.</li></ul>
+                <div id="map_1" style="width: 500px;height: 320px;border: 1px,solid, black"></div>
+            </div>
+            <div class="rest">
+                <a href="https://naver.me/5aVKEfFz">
+                    <img src="img\자갈치 횟집.png" alt="자갈치 횟집"></a>
+                <ul><li>자갈치 횟집</li>
+                <li>자갈치 횟집은 신선한 생선회와 해산물을 저렴한 가격에 제공하는 곳으로, 자갈치 시장을 대표하는 횟집 중 하나입니다. 다양한 생선회와 함께 부산의 대표 해산물 요리를 맛볼 수 있습니다.</li></ul>
+                <div id="map_2" style="width: 500px;height: 320px;border: 1px,solid, black"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <p>&copy; 2024 MyTravel. 모든 권리 보유.</p>
+    </footer>
+
+    <script>
+        function initMap(containerId, lat, lng) {
+            let container = document.getElementById(containerId);
+            let options = {
+                center: new kakao.maps.LatLng(lat, lng),
+                level: 3
+            };
+
+            let map = new kakao.maps.Map(container, options);
+
+            let markerPosition = new kakao.maps.LatLng(lat, lng);
+            let marker = new kakao.maps.Marker({
+                position: markerPosition
+            });
+
+            marker.setMap(map);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initMap('map_1', 35.096727, 129.030364);
+            initMap('map_2', 35.097386, 129.029631);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여행 사이트</title>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3d5154c556d67df4fd5b95746a4f4b25"></script>
+    <link rel="stylesheet" href="gangwon_1.css">
+</head>
+<body>
+    <header>
+        <div class="logo">ᗪᔕᑌ.丅ᖇIᑭ</div>
+        <nav>
+            <ul>
+                <li><a href="test_1.html">홈</a></li>
+                <li><a href="intro.html">소개</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div>
+        <img src="img\설악산.jpg" alt="해운대 해수욕장" id="picture">
+        <div class="text_over">
+            <div class="rest">
+                <a href="https://naver.me/F9QzcU4U">
+                    <img src="img\산마을 식당.jpg" alt="산마을 식당"></a>
+                <ul><li>설악산 산마을식당</li>
+                <li>이곳은 설악산 입구에서 차로 5분 거리에 위치한 한식 전문점으로, 특히 반반토종닭 (백숙과 도리탕)과 황태구이 정식이 유명합니다. 이곳에서 제공하는 건강한 식재료로 만든 다양한 한식 메뉴는 설악산 트레킹 후 허기진 배를 든든하게 채워줍니다</li></ul>
+                <div id="map_1" style="width: 500px;height: 320px;border: 1px,solid, black"></div>
+            </div>
+            <div class="rest">
+                <a href="https://naver.me/xiv58wpu">
+                    <img src="img\하성짬뽕순두부.jpeg" alt="하성짬뽕순두부"></a>
+                <ul><li>하성짬뽕순두부</li>
+                <li>아침부터 운영하는 이 식당은 차돌짬뽕순두부로 유명하며, 이 메뉴는 얼큰한 국물과 순두부의 조화가 일품입니다. 설악산을 등반하고 나서 얼큰한 짬뽕순두부로 속을 달래기에 좋은 곳입니다.</li></ul>
+                <div id="map_2" style="width: 500px;height: 320px;border: 1px,solid, black"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <p>&copy; 2024 MyTravel. 모든 권리 보유.</p>
+    </footer>
+
+    <script>
+        function initMap(containerId, lat, lng) {
+            let container = document.getElementById(containerId);
+            let options = {
+                center: new kakao.maps.LatLng(lat, lng),
+                level: 3
+            };
+
+            let map = new kakao.maps.Map(container, options);
+
+            let markerPosition = new kakao.maps.LatLng(lat, lng);
+            let marker = new kakao.maps.Marker({
+                position: markerPosition
+            });
+
+            marker.setMap(map);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initMap('map_1', 38.202978, 128.346883);
+            initMap('map_2', 38.206629, 128.521956);
+        });
+    </script>
+</body>
+</html>
